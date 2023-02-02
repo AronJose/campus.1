@@ -1,0 +1,79 @@
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+}
+@keyframes spin {
+    0% {
+        --rotate: 0deg;
+    }
+    100% {
+        --rotate: 360deg;
+    }
+}
+body{
+    background: dimgrey;
+    min-height: 100vh;
+    background-image: linear-gradient(
+            var(--rotate)
+            , #4d4b4b, #444448 43%, #3b3a3b);
+    animation: spin 2.5s linear infinite;
+}
+table{
+    position: relative;
+    background: white;
+    padding: 5px 10px 5px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#heading{
+    border : 25px solid white;
+    border-radius: 16px;
+  
+}
+.labels {
+    padding: 5px 50px 5px;
+}
+input{
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 397px;
+    height: 50px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+
+}
+input:focus{
+    outline:none;
+}
+#btn-1 {
+    width: 7%;
+    height: 35px;
+    background: rgb(41, 75, 41);
+    border: none;
+    position: relative;
+    margin-left: 313px;
+
+}
+#btn-1:hover {
+    background: darkslategrey;
+}
+#reset{
+    height: 34px;
+    width: 95px;
+    margin-left: 10px;
+}
+
+#reset:hover{
+    background: darkgray;
+}
+
+#center{
+    margin-top: 161px;
+    margin-right: 60px;
+}

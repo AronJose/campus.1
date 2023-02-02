@@ -1,0 +1,28 @@
+<div class="white_card_body">
+<div align="center" id="center">
+    <form [formGroup]="login">
+    <table id="table1">
+        <tr>
+            <td id="heading" colspan="2">
+                <h1 align="center">Login</h1>
+            </td>
+        </tr>
+        <tr>
+            <td class="labels"><label for="email">Email : </label> </td>
+            <td><input id="email" type="email" formControlName="email" /></td>
+        </tr>
+        <tr>
+            <td class="labels"><label for="password">Password : </label></td>
+            <td><input type="password" id="password" formControlName="password" /></td>
+        </tr>
+
+
+    </table>
+
+    <div>
+        <button type="submit" form="nameform" id="btn-1" (click)="logins()" value="Submit">Login</button>
+        <button type="submit" id="reset" value="cancel">Cancel</button>
+    </div>
+    </form>
+</div>
+</div>

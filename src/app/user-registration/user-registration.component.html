@@ -1,0 +1,43 @@
+<div align="center" id="center">
+    <form [formGroup]="userreg">
+    <table id="table1">
+        <tr  >
+        <td id="heading" colspan="2">
+            <h1 align="center">SignUp</h1></td>
+        </tr>
+        <tr>
+            <td class="labels"><label for="fullName"> Name : </label></td>
+            <td><input id="fullName" type="text" formControlName="fullName"/></td>
+        </tr>
+        <tr>
+            <td class="labels"><label for="dob">Date of Birh : </label> </td>
+            <td><input type="date" id="dob" formControlName="dob"/> </td>
+        </tr>
+        <tr>
+            <td class="labels"><label for="address">Address : </label> </td>
+            <td>
+           <textarea name="dob" id="address" cols="60" rows="5" formControlName="address"></textarea> </td>
+        </tr>
+        <tr>
+            <td class="labels"><label for="phone">Contact : </label> </td>
+            <td><input type="text" id="phone" formControlName="phone"/> </td>
+        </tr>
+        <tr>
+            <td class="labels"><label for="email">Email : </label> </td>
+            <td><input id="email" type="email" formControlName="email"/></td>
+        </tr>
+        <tr>
+            <td class="labels"><label for="password">Password : </label></td>
+            <td><input type="password" id="password" formControlName="password"/></td>
+        </tr>
+     
+        
+    </table>
+
+        <div>
+            <button type="submit" form="nameform" id="btn-1" (click)="registation()" value="Submit">Submit</button>   
+            <button type="submit" id="reset" value="cancel">Cancel</button>  
+        </div>
+    </form>
+    </div>   
+    
