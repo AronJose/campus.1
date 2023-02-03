@@ -37,4 +37,10 @@ export class ServiceService {
     let  head_obj=new HttpHeaders({"Authorization":"Campus " + tocken})
     return this.http.get(environment.baseUrl + '/school',  {headers:head_obj});
   }
+
+  deleteschool(schoolId:any):Observable<any>{
+    let tocken=localStorage.getItem('accesstoken')
+    let  head_obj=new HttpHeaders({"Authorization":"Campus " + tocken})
+    return this.http.delete(environment.baseUrl + '/school/'+schoolId,{headers:head_obj});
+  }
 }

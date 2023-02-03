@@ -21,11 +21,21 @@ schoollist:any;
   Initform(){
       this.service.getSchoollist().subscribe((result: any) => {
         this.schoollist = result;
-        console.log("hello",result);
-    
       })
     }
     editcompany(){}
-    delete(){}
-  }
+    delete(item:any){
+        this.service.deleteschool(item.schoolId).subscribe({
+          next:(result:any)=>{
+            alert("deleted");
+            console.log(result);
+            this.Initform();
+          },
+           error:(error:any)=>{
+            alert(error.error.error);
+          }
+      })
+    }  
+    }
+
 
