@@ -13,6 +13,9 @@ principalreg!:FormGroup;
   constructor(private service:ServiceService,public router:Router) { }
 
   ngOnInit(): void {
+    this.InintForm();
+    this.registration();
+
   }
 InintForm(){
   this.principalreg = new FormGroup({

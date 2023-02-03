@@ -47,8 +47,11 @@ registration(){
     "address":this.schoolreg.controls['address'].value,
     "contact":this.schoolreg.controls['contact'].value,
     "email":this.schoolreg.controls['email'].value,
+    "userId":this.schoolreg.controls['userId'].value
     
   }
+  console.log(param);
+  
   this.service.addschool(param).subscribe({
     next: (result: any) => {
       // this.toaster.success('Created successfully', '');

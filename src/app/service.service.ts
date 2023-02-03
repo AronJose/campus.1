@@ -20,6 +20,7 @@ export class ServiceService {
   }
 
   addschool(param:any):Observable<any>{
+    console.log("Nahiii",param)
     let tocken=localStorage.getItem('accesstoken')
     let  head_obj=new HttpHeaders({"Authorization":"Campus " + tocken})
     return this.http.post(environment.baseUrl + '/school',param,{headers:head_obj});
@@ -28,6 +29,6 @@ export class ServiceService {
   getPricipalList():Observable<any>{
     let tocken=localStorage.getItem('accesstoken')
     let  head_obj=new HttpHeaders({"Authorization":"Campus " + tocken})
-    return this.http.get(environment.baseUrl + '/users',  {headers:head_obj});
+    return this.http.get(environment.baseUrl + '/users/principal',  {headers:head_obj});
   }
 }
