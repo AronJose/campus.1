@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PrincipalComponent } from './principal/principal.component';
 import { SchoolregComponent } from './schoolreg/schoolreg.component';
+import { SchoollistComponent } from './schoollist/schoollist.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SchoolregComponent } from './schoolreg/schoolreg.component';
     AdminComponent,
     UserRegistrationComponent,
     PrincipalComponent,
-    SchoolregComponent
+    SchoolregComponent,
+    SchoollistComponent
   ],
   imports: [
     BrowserModule,

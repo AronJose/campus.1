@@ -31,4 +31,10 @@ export class ServiceService {
     let  head_obj=new HttpHeaders({"Authorization":"Campus " + tocken})
     return this.http.get(environment.baseUrl + '/users/principal',  {headers:head_obj});
   }
+
+  getSchoollist():Observable<any>{
+    let tocken=localStorage.getItem('accesstoken')
+    let  head_obj=new HttpHeaders({"Authorization":"Campus " + tocken})
+    return this.http.get(environment.baseUrl + '/school',  {headers:head_obj});
+  }
 }
