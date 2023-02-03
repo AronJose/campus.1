@@ -1,28 +1,20 @@
-<div class="white_card_body">
-<div align="center" id="center">
-    <form [formGroup]="login">
-    <table id="table1">
-        <tr>
-            <td id="heading" colspan="2">
-                <h1 align="center">Login</h1>
-            </td>
-        </tr>
-        <tr>
-            <td class="labels"><label for="email">Email : </label> </td>
-            <td><input id="email" type="email" formControlName="email" /></td>
-        </tr>
-        <tr>
-            <td class="labels"><label for="password">Password : </label></td>
-            <td><input type="password" id="password" formControlName="password" /></td>
-        </tr>
+<div class="outer_div col-md-12">
+    <form [formGroup]="login" class="col-md-4 form_">
+        <div class="heading_">
+            <h1>Admin Registration</h1>
+        </div>
 
+        <label for="exampleFormControlInput1" class="form-label">Email</label>
+        <input type="email" class="form-control input_" formControlName="email" id="exampleFormControlInput1"
+            placeholder="Registered Email Id">
 
-    </table>
+        <label for="exampleFormControlInput1" class="form-label">Password</label>
+        <input type="password" class="form-control input_" formControlName="password" id="exampleFormControlInput1"
+            placeholder="Password">
 
-    <div>
-        <button type="submit" form="nameform" id="btn-1" (click)="logins()" value="Submit">Login</button>
-        <button type="submit" id="reset" value="cancel">Cancel</button>
-    </div>
+        <div class="col-md-12 mt-3 btn_class">
+            <button type="button" class="btn btn-danger">Cancel</button>
+            <button type="button" class="btn btn-primary submit_btn" (click)="logins()" value="Submit">Login</button>
+        </div>
     </form>
-</div>
 </div>

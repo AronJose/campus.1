@@ -37,7 +37,7 @@ userreg!:FormGroup;
       "address":this.userreg.controls['address'].value,
       "email":this.userreg.controls['email'].value,
       "password":this.userreg.controls['password'].value,
-      "role":1
+      "role":3
     }
     this.service.userreg(param).subscribe({
       next: (result: any) => {

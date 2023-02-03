@@ -1,43 +1,39 @@
-<div align="center" id="center">
-    <form [formGroup]="userreg">
-    <table id="table1">
-        <tr  >
-        <td id="heading" colspan="2">
-            <h1 align="center">SignUp</h1></td>
-        </tr>
-        <tr>
-            <td class="labels"><label for="fullName"> Name : </label></td>
-            <td><input id="fullName" type="text" formControlName="fullName"/></td>
-        </tr>
-        <tr>
-            <td class="labels"><label for="dob">Date of Birh : </label> </td>
-            <td><input type="date" id="dob" formControlName="dob"/> </td>
-        </tr>
-        <tr>
-            <td class="labels"><label for="address">Address : </label> </td>
-            <td>
-           <textarea name="dob" id="address" cols="60" rows="5" formControlName="address"></textarea> </td>
-        </tr>
-        <tr>
-            <td class="labels"><label for="phone">Contact : </label> </td>
-            <td><input type="text" id="phone" formControlName="phone"/> </td>
-        </tr>
-        <tr>
-            <td class="labels"><label for="email">Email : </label> </td>
-            <td><input id="email" type="email" formControlName="email"/></td>
-        </tr>
-        <tr>
-            <td class="labels"><label for="password">Password : </label></td>
-            <td><input type="password" id="password" formControlName="password"/></td>
-        </tr>
-     
-        
-    </table>
+<div class="outer_div col-md-12">
+    <form [formGroup]="userreg" class="col-md-6 form_">
+        <div class="heading_">
+            <h1>Faculty Registration</h1>
+        </div>
 
-        <div>
-            <button type="submit" form="nameform" id="btn-1" (click)="registation()" value="Submit">Submit</button>   
-            <button type="submit" id="reset" value="cancel">Cancel</button>  
+        <label for="exampleFormControlInput1" class="form-label">Name</label>
+        <input type="text" class="form-control input_" formControlName="fullName" id="exampleFormControlInput1"
+            placeholder="Name of the Faculty">
+
+        <label for="exampleFormControlInput1" class="form-label">Date of Birh</label>
+        <input type="date" class="form-control input_" formControlName="dob" id="exampleFormControlInput1"
+            placeholder="Dd/MM/YYYY">
+
+        <label for="exampleFormControlTextarea1" class="form-label">Address</label>
+        <textarea class="form-control input_" formControlName="address" id="exampleFormControlTextarea1"
+            placeholder="Current Address"></textarea>
+
+        <label for="exampleFormControlInput1" class="form-label">Contact</label>
+        <input type="text" class="form-control input_" formControlName="phone" id="exampleFormControlInput1"
+            placeholder="Personal Contact Number">
+
+        <label for="exampleFormControlInput1" class="form-label">Email</label>
+        <input type="email" class="form-control input_" formControlName="email" id="exampleFormControlInput1"
+            placeholder="Personal Email Id">
+
+        <label for="exampleFormControlInput1" class="form-label">Password</label>
+        <input type="password" class="form-control input_" formControlName="password" id="exampleFormControlInput1"
+            placeholder="Password">
+
+
+
+        <div class="col-md-12 mt-3 btn_class">
+            <button type="button" class="btn btn-danger">Cancel</button>
+            <button type="button" class="btn btn-primary submit_btn" (click)="registation()"
+                value="Submit">Submit</button>
         </div>
     </form>
-    </div>   
-    
+</div>

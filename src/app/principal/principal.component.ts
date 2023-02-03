@@ -4,20 +4,18 @@ import { Router } from '@angular/router';
 import { ServiceService } from '../service.service';
 
 @Component({
-  selector: 'app-admin',
-  templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css']
+  selector: 'app-principal',
+  templateUrl: './principal.component.html',
+  styleUrls: ['./principal.component.css']
 })
-export class AdminComponent implements OnInit {
-adminreg!:FormGroup;
+export class PrincipalComponent implements OnInit {
+principalreg!:FormGroup;
   constructor(private service:ServiceService,public router:Router) { }
 
   ngOnInit(): void {
-    this.initform();
-    this.registation();
   }
-initform(){
-  this.adminreg = new FormGroup({
+InintForm(){
+  this.principalreg = new FormGroup({
     fullName:new FormControl('',[Validators.required]),
     dob : new FormControl('',[Validators.required]),
     phone : new FormControl('',[Validators.required]),
@@ -27,17 +25,17 @@ initform(){
   });
 }
 
-  registation(){
-    if(this.adminreg.valid)
+registration(){
+  if(this.principalreg.valid)
     {
     let param = {
-      "fullName":this.adminreg.controls['fullName'].value,
-      "dob":this.adminreg.controls['dob'].value,
-      "phone":this.adminreg.controls['phone'].value,
-      "address":this.adminreg.controls['address'].value,
-      "email":this.adminreg.controls['email'].value,
-      "password":this.adminreg.controls['password'].value,
-      "role":1
+      "fullName":this.principalreg.controls['fullName'].value,
+      "dob":this.principalreg.controls['dob'].value,
+      "phone":this.principalreg.controls['phone'].value,
+      "address":this.principalreg.controls['address'].value,
+      "email":this.principalreg.controls['email'].value,
+      "password":this.principalreg.controls['password'].value,
+      "role":2
     }
     this.service.userreg(param).subscribe({
       next: (result: any) => {
@@ -53,5 +51,5 @@ initform(){
     });
   }
   }
-
 }
+

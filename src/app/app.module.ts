@@ -7,13 +7,17 @@ import { AdminComponent } from './admin/admin.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { PrincipalComponent } from './principal/principal.component';
+import { SchoolregComponent } from './schoolreg/schoolreg.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AdminComponent,
-    UserRegistrationComponent
+    UserRegistrationComponent,
+    PrincipalComponent,
+    SchoolregComponent
   ],
   imports: [
     BrowserModule,

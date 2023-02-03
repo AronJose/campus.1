@@ -1,0 +1,42 @@
+<div class="outer_div col-md-12">
+    <form [formGroup]="schoolreg" class="col-md-6 form_">
+        <div class="heading_">
+            <h1>School Registration</h1>
+        </div>
+
+        <label for="exampleFormControlInput1" class="form-label">School Name</label>
+        <input type="text" class="form-control input_" formControlName="schoolName" id="exampleFormControlInput1"
+            placeholder="Name of the Faculty">
+
+        <label for="exampleFormControlInput1" class="form-label">Place</label>
+        <input type="text" class="form-control input_" formControlName="place" id="exampleFormControlInput1"
+            placeholder="Name of the Faculty">
+
+        <label for="exampleFormControlTextarea1" class="form-label">Address</label>
+        <textarea class="form-control input_" formControlName="address" id="exampleFormControlTextarea1"
+            placeholder="Current Address"></textarea>
+
+        <label for="exampleFormControlInput1" class="form-label">Contact</label>
+        <input type="text" class="form-control input_" formControlName="contact" id="exampleFormControlInput1"
+            placeholder="Personal Contact Number">
+
+        <label for="exampleFormControlInput1" class="form-label">Email</label>
+        <input type="email" class="form-control input_" formControlName="email" id="exampleFormControlInput1"
+            placeholder="Personal Email Id">
+
+            
+        <label class="form-label" > Principal</label>
+            <select class="form-select form-control input_" formControlName="userId" aria-label="Default select example">
+                <option value="" hidden disabled selected>---Choose Registered Prinipals---</option>
+                <option *ngFor="let org of school" value={{org.userId}}>
+                  {{org.fullName}}
+                </option>
+              </select>
+
+        <div class="col-md-12 mt-3 btn_class">
+            <button type="button" class="btn btn-danger">Cancel</button>
+            <button type="button" class="btn btn-primary submit_btn" (click)="registration()"
+                value="Submit">Submit</button>
+        </div>
+    </form>
+</div>
