@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { PrincipalComponent } from './principal/principal.component';
 import { SchoolregComponent } from './schoolreg/schoolreg.component';
 import { SchoollistComponent } from './schoollist/schoollist.component';
+import { HeaderComponent } from './header/header.component';
+import { SchooleditComponent } from './schoollist/schooledit/schooledit.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { SchoollistComponent } from './schoollist/schoollist.component';
     UserRegistrationComponent,
     PrincipalComponent,
     SchoolregComponent,
-    SchoollistComponent
+    SchoollistComponent,
+    HeaderComponent,
+    SchooleditComponent
   ],
   imports: [
     BrowserModule,

@@ -11,23 +11,23 @@ import { ServiceService } from '../service.service';
 export class SchoolregComponent implements OnInit {
 schoolreg!:FormGroup;
 school:any;
+flag: any;
   constructor(private service:ServiceService,public router:Router) { }
 
   ngOnInit(): void {
     this.InitForm();
     this.getPrincipallist();
-    this.registration();
+    // this.registration();
   }
 
   InitForm(){
     this.schoolreg = new FormGroup({
       schoolName:new FormControl('',[Validators.required]),
       place : new FormControl('',[Validators.required]),
-      address : new FormControl('',[Validators.required]),
+      address : new FormControl(''),
       contact : new FormControl('',[Validators.required]),
       email: new FormControl('', [Validators.required, Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)]),
-      // principal: new FormControl('',[Validators.required])
-      userId : new FormControl('',[Validators.required]),
+      userId : new FormControl('')
     });
   }
 getPrincipallist(){
@@ -39,8 +39,14 @@ getPrincipallist(){
 }
 
 registration(){
-  if(this.schoolreg.valid)
+ 
+  if (this.schoolreg.invalid) {
+    this.flag = true;
+  }
+  else {
+  (this.schoolreg.valid)
   {  
+  debugger
   let param = {
     "schoolName":this.schoolreg.controls['schoolName'].value,
     "place":this.schoolreg.controls['place'].value,
@@ -48,7 +54,6 @@ registration(){
     "contact":this.schoolreg.controls['contact'].value,
     "email":this.schoolreg.controls['email'].value,
     "userId":this.schoolreg.controls['userId'].value
-    
   }
   console.log(param);
   
@@ -56,7 +61,9 @@ registration(){
     next: (result: any) => {
       // this.toaster.success('Created successfully', '');
       alert('success');
-      // this.router.navigate(['/companylist']);
+      console.log(result);
+      
+      this.router.navigate(['/schoollist']);
 
     },
     error: (err: any) => {
@@ -66,5 +73,5 @@ registration(){
   });
 }
 }
-}
+}}
 

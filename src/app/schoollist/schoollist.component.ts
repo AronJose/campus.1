@@ -23,7 +23,6 @@ schoollist:any;
         this.schoollist = result;
       })
     }
-    editcompany(){}
     delete(item:any){
         this.service.deleteschool(item.schoolId).subscribe({
           next:(result:any)=>{
@@ -35,7 +34,12 @@ schoollist:any;
             alert(error.error.error);
           }
       })
-    }  
+    } 
+    
+    editSchool(item: any) {
+      this.roter.navigate(['schooledit/', item.schoolId])
+    }
+
     }
 
 

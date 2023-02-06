@@ -43,7 +43,6 @@ initform(){
       next: (result: any) => {
         // this.toaster.success('Created successfully', '');
         alert('success');
-        // this.router.navigate(['/companylist']);
 
       },
       error: (err: any) => {

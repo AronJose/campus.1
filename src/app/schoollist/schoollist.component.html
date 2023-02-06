@@ -1,5 +1,17 @@
-<div class="col-md-4 heading_ ">School List</div>
-<form class="col-md-6 ">
+  
+<div>
+    <app-header></app-header> 
+</div>
+<br><br><br>
+<div>
+<div class="col-md-12 heading_ ">School List</div><br>
+<div class="container">
+    <form action="/" method="GET" class="form">
+      <input type="search" placeholder="Search" class="search-field" />
+      <button type="submit" class="search-button">Search</button>
+    </form>
+  </div>
+<form class="col-md-12 ">
     <table class="table table-striped">
         <thead>
             <tr>
@@ -28,9 +40,10 @@
                     {{item.email}}
                 </td>
                 <td>{{item.fullName}}</td>
-                <td><a (click)="editcompany()" class='fa fa-edit'></a></td>
+                <td><a (click)="editSchool(item)" class='fa fa-edit'></a></td>
                 <td><a title="delete" (click)="delete(item)"><i class="fa fa-trash"></i></a></td>
             </tr>
         </tbody>
     </table>
 </form>
+</div>

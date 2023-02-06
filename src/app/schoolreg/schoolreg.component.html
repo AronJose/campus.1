@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div class="outer_div col-md-12">
     <form [formGroup]="schoolreg" class="col-md-6 form_">
         <div class="heading_">
@@ -7,10 +8,32 @@
         <label for="exampleFormControlInput1" class="form-label">School Name</label>
         <input type="text" class="form-control input_" formControlName="schoolName" id="exampleFormControlInput1"
             placeholder="Name of the Faculty">
+        <div>
+            <span class="sp" style="color: brown;"
+                *ngIf="(schoolreg.controls['schoolName'].touched) && (schoolreg.hasError('required','schoolName'))"><i>school
+                    name is mandatory*</i></span>
+            <div *ngIf="flag==true">
+                <span class="text-danger"
+                    *ngIf="schoolreg.controls['schoolName'].invalid || schoolreg.hasError('required','schoolName')"><i>Name
+                        required</i></span>
+            </div>
+
+        </div>
 
         <label for="exampleFormControlInput1" class="form-label">Place</label>
         <input type="text" class="form-control input_" formControlName="place" id="exampleFormControlInput1"
             placeholder="Name of the Faculty">
+        <div>
+            <span class="sp" style="color: brown;"
+                *ngIf="(schoolreg.controls['place'].touched) && (schoolreg.hasError('required','place'))"><i>place
+                    is mandatory*</i></span>
+            <div *ngIf="flag==true">
+                <span class="text-danger"
+                    *ngIf="schoolreg.controls['place'].invalid || schoolreg.hasError('required','place')"><i>place
+                        required</i></span>
+            </div>
+
+        </div>
 
         <label for="exampleFormControlTextarea1" class="form-label">Address</label>
         <textarea class="form-control input_" formControlName="address" id="exampleFormControlTextarea1"
@@ -19,19 +42,39 @@
         <label for="exampleFormControlInput1" class="form-label">Contact</label>
         <input type="text" class="form-control input_" formControlName="contact" id="exampleFormControlInput1"
             placeholder="Personal Contact Number">
+        <div>
+            <span class="sp" style="color: brown;"
+                *ngIf="(schoolreg.controls['contact'].touched) && (schoolreg.hasError('required','contact'))"><i>contact
+                    is mandatory*</i></span>
+            <div *ngIf="flag==true">
+                <span class="text-danger"
+                    *ngIf="schoolreg.controls['contact'].invalid || schoolreg.hasError('required','contact')"><i>contact
+                        required</i></span>
+            </div>
+        </div>
 
         <label for="exampleFormControlInput1" class="form-label">Email</label>
         <input type="email" class="form-control input_" formControlName="email" id="exampleFormControlInput1"
             placeholder="Personal Email Id">
 
-            
-        <label class="form-label" > Principal</label>
-            <select class="form-select form-control input_" formControlName="userId" aria-label="Default select example">
-                <option value="" hidden disabled selected>---Choose Registered Prinipals---</option>
-                <option *ngFor="let org of school" value={{org.userId}}>
-                  {{org.fullName}}
-                </option>
-              </select>
+        <div>
+            <span class="sp" style="color: brown;"
+                *ngIf="(schoolreg.controls['email'].touched) && (schoolreg.hasError('required','email'))"><i>contact
+                    is mandatory*</i></span>
+            <div *ngIf="flag==true">
+                <span class="text-danger"
+                    *ngIf="schoolreg.controls['email'].invalid || schoolreg.hasError('required','email')"><i>contact
+                        required</i></span>
+            </div>
+        </div>
+
+        <label class="form-label"> Principal</label>
+        <select class="form-select form-control input_" formControlName="userId" aria-label="Default select example">
+            <option value="" hidden disabled selected>---Choose Registered Prinipals---</option>
+            <option *ngFor="let org of school" value={{org.userId}}>
+                {{org.fullName}}
+            </option>
+        </select>
 
         <div class="col-md-12 mt-3 btn_class">
             <button type="button" class="btn btn-danger">Cancel</button>
