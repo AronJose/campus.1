@@ -1,16 +1,32 @@
 <div class="outer_div col-md-12">
     <form [formGroup]="login" class="col-md-4 form_">
         <div class="heading_">
-            <h1>Admin Registration</h1>
+            <h1>Login</h1>
         </div>
 
         <label for="exampleFormControlInput1" class="form-label">Email</label>
         <input type="email" class="form-control input_" formControlName="email" id="exampleFormControlInput1"
             placeholder="Registered Email Id">
+        <div>
+            <span class="sp" style="color: brown;"
+                *ngIf="(login.controls['email'].touched) && (login.hasError('required','email'))"><i></i></span>
+            <div *ngIf="flage==true">
+                <span class="text-danger" *ngIf="login.controls['email'].invalid"><i>Email
+                        required</i></span>
+            </div>
+        </div>
 
         <label for="exampleFormControlInput1" class="form-label">Password</label>
         <input type="password" class="form-control input_" formControlName="password" id="exampleFormControlInput1"
             placeholder="Password">
+        <div>
+            <span class="sp" style="color: brown;"
+                *ngIf="(login.controls['password'].touched) && (login.hasError('required','password'))"><i></i></span>
+            <div *ngIf="flage==true">
+                <span class="text-danger" *ngIf="login.controls['password'].invalid"><i>Password
+                        required</i></span>
+            </div>
+        </div>
 
         <div class="col-md-12 mt-3 btn_class">
             <button type="button" class="btn btn-danger">Cancel</button>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ServiceService } from '../service.service';
 
 @Component({
@@ -9,10 +10,14 @@ import { ServiceService } from '../service.service';
   styleUrls: ['./schoollist.component.css']
 })
 export class SchoollistComponent implements OnInit {
-
+  searchs:FormGroup=new FormGroup(
+    { 
+      keyword:new FormControl('',Validators.required)
+      
+    });
 schoollist:any;
 
-  constructor(public service:ServiceService,public roter:Router) { }
+  constructor(public service:ServiceService,public roter:Router,private toastr: ToastrService) { }
 
   ngOnInit(){
     this.Initform();
@@ -26,8 +31,7 @@ schoollist:any;
     delete(item:any){
         this.service.deleteschool(item.schoolId).subscribe({
           next:(result:any)=>{
-            alert("deleted");
-            console.log(result);
+            this.toastr.success('deleted', '');
             this.Initform();
           },
            error:(error:any)=>{
@@ -40,6 +44,11 @@ schoollist:any;
       this.roter.navigate(['schooledit/', item.schoolId])
     }
 
+    search(){
+      console.log(this.searchs.value.keyword);
+      this.service.search(this.searchs.value.keyword).subscribe({
+      })
+    }
     }
 
 

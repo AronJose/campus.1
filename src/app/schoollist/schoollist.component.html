@@ -6,9 +6,8 @@
 <div>
 <div class="col-md-12 heading_ ">School List</div><br>
 <div class="container">
-    <form action="/" method="GET" class="form">
-      <input type="search" placeholder="Search" class="search-field" />
-      <button type="submit" class="search-button">Search</button>
+    <form [formGroup]="searchs" class="col-md-12 search_"  (keyup)="search()">
+      <input type="search" placeholder="Search" formControlName="keyword" class="search-field" />
     </form>
   </div>
 <form class="col-md-12 ">

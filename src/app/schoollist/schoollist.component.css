@@ -46,4 +46,9 @@
     cursor:pointer;
     background:#aaa;
   }
+  .search_{
+    position: fixed;
+    margin-left: 66%;
+    width: 44%;
+  }
   

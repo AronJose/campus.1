@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ServiceService } from '../service.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-schoolreg',
@@ -12,7 +13,7 @@ export class SchoolregComponent implements OnInit {
 schoolreg!:FormGroup;
 school:any;
 flag: any;
-  constructor(private service:ServiceService,public router:Router) { }
+  constructor(private service:ServiceService,public router:Router,private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.InitForm();
@@ -42,11 +43,7 @@ registration(){
  
   if (this.schoolreg.invalid) {
     this.flag = true;
-  }
-  else {
-  (this.schoolreg.valid)
-  {  
-  debugger
+  } 
   let param = {
     "schoolName":this.schoolreg.controls['schoolName'].value,
     "place":this.schoolreg.controls['place'].value,
@@ -59,19 +56,19 @@ registration(){
   
   this.service.addschool(param).subscribe({
     next: (result: any) => {
-      // this.toaster.success('Created successfully', '');
-      alert('success');
+      this.toastr.success('Created successfully', '');
+      // alert('success');
       console.log(result);
       
       this.router.navigate(['/schoollist']);
 
     },
     error: (err: any) => {
-      // this.toaster.error(err.error.error);
+      this.toastr.error(err.error.error);
       console.log(err);
     }
   });
 }
 }
-}}
+
 
