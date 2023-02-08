@@ -1,0 +1,70 @@
+<div class="outer_div col-md-12">
+    <form [formGroup]="facultyreg" class="col-md-6 form_">
+        <div class="heading_">
+            <h1>Principal Registration</h1>
+        </div>
+        <label for="exampleFormControlInput1" class="form-label">Name</label>
+        <input type="text" class="form-control input_" formControlName="fullName" 
+            placeholder="Name of the Faculty">
+        <div>
+            <span class="sp" style="color: brown;"
+                *ngIf="(facultyreg.controls['fullName'].touched) && (facultyreg.hasError('required','fullName'))"></span>
+            <div *ngIf="flag==true">
+                <span class="text-danger" *ngIf="facultyreg.controls['fullName'].invalid"><i>Name
+                        required</i></span>
+            </div>
+        </div>
+        <label for="exampleFormControlInput1" class="form-label">Date of Birh</label>
+        <input type="date" class="form-control input_" formControlName="dob" 
+            placeholder="Dd/MM/YYYY">
+        <label for="exampleFormControlTextarea1" class="form-label">Address</label>
+        <textarea class="form-control input_" formControlName="address" 
+            placeholder="Current Address"></textarea>
+        <div>
+            <span class="sp" style="color: brown;"
+                *ngIf="(facultyreg.controls['address'].touched) && (facultyreg.hasError('required','address'))"></span>
+            <div *ngIf="flag==true">
+                <span class="text-danger" *ngIf="facultyreg.controls['address'].invalid"><i>Adress is
+                        required</i></span>
+            </div>
+        </div>
+        <label for="exampleFormControlInput1" class="form-label">Contact</label>
+        <input type="text" class="form-control input_" formControlName="phone" 
+            placeholder="Personal Contact Number">
+        <div>
+            <span class="sp" style="color: brown;"
+                *ngIf="(facultyreg.controls['phone'].touched) && (facultyreg.hasError('required','phone'))"></span>
+            <div *ngIf="flag==true">
+                <span class="text-danger" *ngIf="facultyreg.controls['phone'].invalid"><i>phone is
+                        required</i></span>
+            </div>
+        </div>
+        <label for="exampleFormControlInput1" class="form-label">Email</label>
+        <input type="email" class="form-control input_" formControlName="email" 
+            placeholder="Personal Email Id">
+        <div>
+            <span class="sp" style="color: brown;"
+                *ngIf="(facultyreg.controls['email'].touched) && (facultyreg.hasError('required','email'))"></span>
+            <div *ngIf="flag==true">
+                <span class="text-danger" *ngIf="facultyreg.controls['email'].invalid"><i>Email is
+                        required</i></span>
+            </div>
+        </div>
+        <label for="exampleFormControlInput1" class="form-label">Password</label>
+        <input type="password" class="form-control input_" formControlName="password" 
+            placeholder="Password">
+        <div>
+            <span class="sp" style="color: brown;"
+                *ngIf="(facultyreg.controls['password'].touched) && (facultyreg.hasError('required','password'))"></span>
+            <div *ngIf="flag==true">
+                <span class="text-danger" *ngIf="facultyreg.controls['password'].invalid"><i>password is
+                        required</i></span>
+            </div>
+        </div>
+        <div class="col-md-12 mt-3 btn_class">
+            <button type="button" class="btn btn-danger">Cancel</button>
+            <button type="button" class="btn btn-primary submit_btn" (click)="registration()"
+                value="Submit">Submit</button>
+        </div>
+    </form>
+</div>

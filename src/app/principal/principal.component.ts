@@ -43,7 +43,7 @@ export class PrincipalComponent implements OnInit {
       "password": this.principalreg.controls['password'].value,
       "role": 2
     }
-    this.service.userreg(param).subscribe({
+    this.service.principal(param).subscribe({
       next: (result: any) => {
         this.toaster.success('Created successfully', '');
       },

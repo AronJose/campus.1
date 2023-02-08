@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PrincipalComponent } from './principal/principal.component';
@@ -15,13 +14,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ListSchoolInchageComponent } from './list-school-inchage/list-school-inchage.component';
 import { InchargeeditComponent } from './inchargeedit/inchargeedit.component';
+import { FacultyComponent } from './faculty/faculty.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    UserRegistrationComponent,
     PrincipalComponent,
     SchoolregComponent,
     SchoollistComponent,
@@ -29,6 +28,7 @@ import { InchargeeditComponent } from './inchargeedit/inchargeedit.component';
     SchooleditComponent,
     ListSchoolInchageComponent,
     InchargeeditComponent,
+    FacultyComponent,
 
   ],
   imports: [

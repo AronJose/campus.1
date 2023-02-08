@@ -15,7 +15,11 @@ export class ServiceService {
     return this.http.post(environment.baseUrl + '/login',data);
   }
 
-  userreg(param:any):Observable<any>{
+  Faculty(param:any):Observable<any>{
+    return this.http.post(environment.baseUrl + '/users',param);
+  }
+  
+  principal(param:any):Observable<any>{
     return this.http.post(environment.baseUrl + '/users',param);
   }
 
