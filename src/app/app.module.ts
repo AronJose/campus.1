@@ -15,6 +15,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { ListSchoolInchageComponent } from './list-school-inchage/list-school-inchage.component';
 import { InchargeeditComponent } from './inchargeedit/inchargeedit.component';
 import { FacultyComponent } from './faculty/faculty.component';
+import { FacultylistComponent } from './faculty/facultylist/facultylist.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { FacultyComponent } from './faculty/faculty.component';
     ListSchoolInchageComponent,
     InchargeeditComponent,
     FacultyComponent,
+    FacultylistComponent,
 
   ],
   imports: [

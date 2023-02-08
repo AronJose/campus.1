@@ -1,0 +1,41 @@
+  
+<div>
+    <app-header></app-header> 
+</div>
+<br><br><br>
+<div>
+<div class="col-md-12 heading_ ">Faculty List</div><br>
+<form class="col-md-12 ">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Faculty Name</th>
+                <th>Date of Birth</th>
+                <th>Contact</th>
+                <th>Email Id</th>
+                <th colspan="2">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let f of facultylist">
+                <td>{{f.userId}}</td>
+                <td>
+                    {{f.fullName}}
+                </td>
+                <td>
+                    {{f.dob}}
+                </td>
+                <td>
+                    {{f.phone}}
+                </td>
+                <td>
+                    {{f.email}}
+                </td>
+                <td><a (click)="editFaculty(f)" class='fa fa-edit'></a></td>
+                <td><a title="delete" (click)="delete(f)"><i class="fa fa-trash"></i></a></td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+</div>
