@@ -21,11 +21,14 @@ schoollist:any;
 
   ngOnInit(){
     this.Initform();
+
+    
   }
 
   Initform(){
       this.service.getSchoollist().subscribe((result: any) => {
         this.schoollist = result;
+    
       })
     }
     delete(item:any){

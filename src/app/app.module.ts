@@ -13,6 +13,9 @@ import { HeaderComponent } from './header/header.component';
 import { SchooleditComponent } from './schoollist/schooledit/schooledit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { ListSchoolInchageComponent } from './list-school-inchage/list-school-inchage.component';
+import { InchargeeditComponent } from './inchargeedit/inchargeedit.component';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { ToastrModule } from 'ngx-toastr';
     SchoolregComponent,
     SchoollistComponent,
     HeaderComponent,
-    SchooleditComponent
+    SchooleditComponent,
+    ListSchoolInchageComponent,
+    InchargeeditComponent,
+
   ],
   imports: [
     BrowserModule,

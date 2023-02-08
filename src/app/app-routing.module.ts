@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { InchargeeditComponent } from './inchargeedit/inchargeedit.component';
+import { ListSchoolInchageComponent } from './list-school-inchage/list-school-inchage.component';
 import { LoginComponent } from './login/login.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { SchooleditComponent } from './schoollist/schooledit/schooledit.component';
@@ -13,8 +15,9 @@ const routes: Routes = [
   {path:'principalreg',component:PrincipalComponent},
   {path:'schoolreg',component:SchoolregComponent},
   {path:'schoollist',component:SchoollistComponent},
-  {path:'schooledit/:id',component:SchooleditComponent}
-
+  {path:'schooledit/:id',component:SchooleditComponent},
+  {path:'listschoolIncharg',component:ListSchoolInchageComponent},
+  {path:'inchargedit/:id',component:InchargeeditComponent}
 ];
 
 @NgModule({

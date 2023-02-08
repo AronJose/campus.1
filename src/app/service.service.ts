@@ -59,6 +59,12 @@ export class ServiceService {
   search(srh:any):Observable<any>{
     let tocken=localStorage.getItem('accesstoken')
     let  head_obj=new HttpHeaders({"Authorization":"Campus " + tocken})
-    return this.http.get(environment.baseUrl + '/school?keyword='+ srh,{headers:head_obj});
+    return this.http.get(environment.baseUrl + '/school/search?keyword='+ srh,{headers:head_obj});
+  }
+
+  updateIncharge(list:any,schoolId:any):Observable<any>{
+    let tocken=localStorage.getItem('accesstoken')
+    let  head_obj=new HttpHeaders({"Authorization":"Campus " + tocken})
+    return this.http.put(environment.baseUrl + '/school/'+ schoolId,list,{headers:head_obj});
   }
 }

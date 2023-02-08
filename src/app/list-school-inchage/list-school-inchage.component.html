@@ -1,0 +1,30 @@
+  
+<div>
+    <app-header></app-header> 
+</div>
+<br><br><br>
+<div>
+<div class="col-md-12 heading_ ">List School Incharge</div><br>
+<form class="col-md-12 ">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>School Name</th>
+                <th>Principal</th>
+                <th colspan="2">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let list of Incharge">
+                <td>{{list.schoolId}}</td>
+                <td>
+                    {{list.schoolName}}
+                </td>
+                <td>{{list.fullName}}</td>
+                <td><a (click)="editIncharge(list)" class='fa fa-edit'></a></td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+</div>
