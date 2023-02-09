@@ -24,7 +24,6 @@ export class ServiceService {
   }
 
   addschool(param:any):Observable<any>{
-    console.log("Nahiii",param)
     let tocken=localStorage.getItem('accesstoken')
     let  head_obj=new HttpHeaders({"Authorization":"Campus " + tocken})
     return this.http.post(environment.baseUrl + '/school',param,{headers:head_obj});
@@ -70,5 +69,29 @@ export class ServiceService {
     let tocken=localStorage.getItem('accesstoken')
     let  head_obj=new HttpHeaders({"Authorization":"Campus " + tocken})
     return this.http.put(environment.baseUrl + '/school/'+ schoolId,list,{headers:head_obj});
+  }
+
+  getFaculty():Observable<any>{
+    let tocken=localStorage.getItem('accesstoken')
+    let  head_obj=new HttpHeaders({"Authorization":"Campus " + tocken})
+    return this.http.get(environment.baseUrl + '/users/faculty',  {headers:head_obj});
+  }
+
+  getfaculty(userId:any):Observable<any>{
+    let tocken=localStorage.getItem('accesstoken')
+    let  head_obj=new HttpHeaders({"Authorization":"Campus " + tocken})
+    return this.http.get(environment.baseUrl + '/users/'+userId,{headers:head_obj});
+  }
+
+  updateFaculty(f:any,userId:any):Observable<any>{
+    let tocken=localStorage.getItem('accesstoken')
+    let  head_obj=new HttpHeaders({"Authorization":"Campus " + tocken})
+    return this.http.put(environment.baseUrl + '/users/'+ userId,f,{headers:head_obj});
+  }
+
+  deleteFaculty(userId:any):Observable<any>{
+    let tocken=localStorage.getItem('accesstoken')
+    let  head_obj=new HttpHeaders({"Authorization":"Campus " + tocken})
+    return this.http.delete(environment.baseUrl + '/users/'+userId,{headers:head_obj});
   }
 }

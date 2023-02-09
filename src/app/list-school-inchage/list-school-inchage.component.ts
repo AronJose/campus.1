@@ -22,7 +22,7 @@ Incharge:any;
     }); 
   }
   editIncharge(list:any){
-    this.router.navigate(['inchargedit/', list.schoolId]);
+    this.router.navigate(['inchargedit/', list.schoolId]);  
     console.log(list);
     
   }

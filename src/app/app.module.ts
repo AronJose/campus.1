@@ -16,6 +16,10 @@ import { ListSchoolInchageComponent } from './list-school-inchage/list-school-in
 import { InchargeeditComponent } from './inchargeedit/inchargeedit.component';
 import { FacultyComponent } from './faculty/faculty.component';
 import { FacultylistComponent } from './faculty/facultylist/facultylist.component';
+import { PrincipalHeaderComponent } from './principal-header/principal-header.component';
+import { FacultyHeaderComponent } from './faculty-header/faculty-header.component';
+import { FacultyEditComponent } from './faculty/faculty-edit/faculty-edit.component';
+
 
 
 @NgModule({
@@ -31,6 +35,10 @@ import { FacultylistComponent } from './faculty/facultylist/facultylist.componen
     InchargeeditComponent,
     FacultyComponent,
     FacultylistComponent,
+    PrincipalHeaderComponent,
+    FacultyHeaderComponent,
+    FacultyEditComponent,
+
 
   ],
   imports: [
