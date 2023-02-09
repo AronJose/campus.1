@@ -59,7 +59,7 @@ export class InchargeeditComponent implements OnInit {
     if (this.Inchargeedit.valid) {
       this.service.updateIncharge(this.Inchargeedit.value, this.schoolId).subscribe({
         next: (result: any) => {
-          this.toaster.success('successfully', '');
+          this.toaster.success('success', '');
           this.router.navigate(['/listschoolIncharg']);
         }, error: (err: any) => {
           this.toaster.error(err.error.error);

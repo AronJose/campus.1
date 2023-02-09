@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
               localStorage.setItem('role', result.role)
             localStorage.setItem('userId', result.userId)
           }
-          this.toaster.success('Created successfully', '');
+          this.toaster.success('Login successfully', '');
           this.router.navigate(['/schoollist']);
 
         },

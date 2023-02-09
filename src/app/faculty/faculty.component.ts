@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { ServiceService } from '../service.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { ServiceService } from '../service.service';
 export class FacultyComponent implements OnInit {
   facultyreg!:FormGroup;
   flag:any;
-  constructor(private service:ServiceService) { }
+  constructor(private service:ServiceService,public toaster:ToastrService) { }
 
   ngOnInit(): void {
     this.Initform();
@@ -44,13 +45,10 @@ export class FacultyComponent implements OnInit {
     }
     this.service.Faculty(param).subscribe({
       next: (result: any) => {
-        // this.toaster.success('Created successfully', '');
-        alert('success');
-      
-
+        this.toaster.success('Created successfully', '')
       },
       error: (err: any) => {
-        // this.toaster.error(err.error.error);
+        this.toaster.error(err.error.error);
         console.log(err);
       }
     });

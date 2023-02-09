@@ -55,7 +55,7 @@ export class FacultyEditComponent implements OnInit {
     }
     this.service.updateFaculty(this.facultyedit.value, this.userId).subscribe({
       next: (result: any) => {
-        this.toaster.success('Created successfully', '');
+        this.toaster.success('Updation success', '');
         this.router.navigate(['/facultyist']);
         console.log(result);
       },

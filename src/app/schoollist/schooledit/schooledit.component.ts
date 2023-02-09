@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ServiceService } from 'src/app/service.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class SchooleditComponent implements OnInit {
   schooledit!:FormGroup;
   school:any;
   schoolId:any;
-  constructor(private service:ServiceService,public activerouter:ActivatedRoute,public router:Router) { }
+  constructor(private service:ServiceService,public activerouter:ActivatedRoute,public router:Router,public toaster:ToastrService) { }
 
   ngOnInit(): void {
     this.initupdate();
@@ -47,7 +48,7 @@ export class SchooleditComponent implements OnInit {
           this.schooledit.controls['userId'].setValue(result.userId)
 
       },error: (err: any) => {
-        // this.toaster.error(err.error.error);
+        this.toaster.error(err.error.error);
         alert('error')
       }
     });
@@ -65,15 +66,11 @@ export class SchooleditComponent implements OnInit {
     if (this.schooledit.valid) {
       this.service.updateschool(this.schooledit.value, this.schoolId).subscribe({
         next: (result: any) => {
-          // this.toaster.success('Created successfully', '');
-          alert('success');
+          this.toaster.success('success', '');
           this.router.navigate(['/schoollist']);
-
-          console.log(result);
         },
         error: (err: any) => {
-          // this.toaster.error(err.error.error);
-          console.log(err);
+          this.toaster.error(err.error.error);
         }
       });
     }
