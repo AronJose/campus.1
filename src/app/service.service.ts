@@ -94,4 +94,10 @@ export class ServiceService {
     let  head_obj=new HttpHeaders({"Authorization":"Campus " + tocken})
     return this.http.delete(environment.baseUrl + '/users/'+userId,{headers:head_obj});
   }
+
+  addStudent(param:any):Observable<any>{
+    let tocken=localStorage.getItem('accesstoken')
+    let  head_obj=new HttpHeaders({"Authorization":"Campus " + tocken})
+    return this.http.post(environment.baseUrl + '/student',param,{headers:head_obj});
+  }
 }

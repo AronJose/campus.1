@@ -10,6 +10,7 @@ import { PrincipalComponent } from './principal/principal.component';
 import { SchooleditComponent } from './schoollist/schooledit/schooledit.component';
 import { SchoollistComponent } from './schoollist/schoollist.component';
 import { SchoolregComponent } from './schoolreg/schoolreg.component';
+import { StudentRegComponent } from './student-reg/student-reg.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path:'inchargedit/:id',component:InchargeeditComponent},
   {path:'faculty',component:FacultyComponent},
   {path:'facultylist',component:FacultylistComponent},
-  {path:'facultyedit/:id',component:FacultyEditComponent}
+  {path:'facultyedit/:id',component:FacultyEditComponent},
+  {path:'studentreg',component:StudentRegComponent}
 ];
 
 @NgModule({

@@ -19,6 +19,7 @@ import { FacultylistComponent } from './faculty/facultylist/facultylist.componen
 import { PrincipalHeaderComponent } from './principal-header/principal-header.component';
 import { FacultyHeaderComponent } from './faculty-header/faculty-header.component';
 import { FacultyEditComponent } from './faculty/faculty-edit/faculty-edit.component';
+import { StudentRegComponent } from './student-reg/student-reg.component';
 
 
 
@@ -38,6 +39,7 @@ import { FacultyEditComponent } from './faculty/faculty-edit/faculty-edit.compon
     PrincipalHeaderComponent,
     FacultyHeaderComponent,
     FacultyEditComponent,
+    StudentRegComponent,
 
 
   ],

@@ -40,7 +40,6 @@ getPrincipallist(){
 }
 
 registration(){
- 
   if (this.schoolreg.invalid) {
     this.flag = true;
   } 
