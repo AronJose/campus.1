@@ -2,7 +2,7 @@
 <div class="outer_div col-md-12">
     <form [formGroup]="facultyreg" class="col-md-6 form_">
         <div class="heading_">
-            <h1>Principal Registration</h1>
+            <h1>Faculty Registration</h1>
         </div>
         <label for="exampleFormControlInput1" class="form-label">Name</label>
         <input type="text" class="form-control input_" formControlName="fullName" 
@@ -40,6 +40,15 @@
                         required</i></span>
             </div>
         </div>
+
+        <label class="form-label"> School</label>
+        <select class="form-select form-control input_" formControlName="schoolId" aria-label="Default select example">
+            <option value="" hidden disabled selected>---Choose Registered school---</option>
+            <option *ngFor="let sf of faculty" value={{sf.schoolId}}>
+                {{sf.schoolName}}
+            </option>
+        </select>
+
         <label for="exampleFormControlInput1" class="form-label">Email</label>
         <input type="email" class="form-control input_" formControlName="email" 
             placeholder="Personal Email Id">
