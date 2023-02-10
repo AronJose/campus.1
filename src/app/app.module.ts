@@ -20,6 +20,7 @@ import { PrincipalHeaderComponent } from './principal-header/principal-header.co
 import { FacultyHeaderComponent } from './faculty-header/faculty-header.component';
 import { FacultyEditComponent } from './faculty/faculty-edit/faculty-edit.component';
 import { StudentRegComponent } from './student-reg/student-reg.component';
+import { StudentlistComponent } from './studentlist/studentlist.component';
 
 
 
@@ -40,6 +41,7 @@ import { StudentRegComponent } from './student-reg/student-reg.component';
     FacultyHeaderComponent,
     FacultyEditComponent,
     StudentRegComponent,
+    StudentlistComponent,
 
 
   ],

@@ -1,0 +1,35 @@
+  
+<div>
+    <app-header></app-header> 
+</div>
+<br><br><br>
+<div>
+<div class="col-md-12 heading_ ">Student List</div><br>
+<form class="col-md-12 ">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Student Name</th>
+                <th>Email Id</th>
+                <th>School</th>
+                <th colspan="2">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of studentlist">
+                <td>{{item.schoolId}}</td>
+                <td>
+                    {{item.studentName}}
+                </td>
+                <td>
+                    {{item.email}}
+                </td>
+                <td>{{item.schoolName}}</td>
+                <td><a (click)="editStudent(item)" class='fa fa-edit'></a></td>
+                <td><a title="delete" (click)="delete(item)"><i class="fa fa-trash"></i></a></td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+</div>

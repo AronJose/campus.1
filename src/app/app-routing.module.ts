@@ -11,6 +11,7 @@ import { SchooleditComponent } from './schoollist/schooledit/schooledit.componen
 import { SchoollistComponent } from './schoollist/schoollist.component';
 import { SchoolregComponent } from './schoolreg/schoolreg.component';
 import { StudentRegComponent } from './student-reg/student-reg.component';
+import { StudentlistComponent } from './studentlist/studentlist.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path:'faculty',component:FacultyComponent},
   {path:'facultylist',component:FacultylistComponent},
   {path:'facultyedit/:id',component:FacultyEditComponent},
-  {path:'studentreg',component:StudentRegComponent}
+  {path:'studentreg',component:StudentRegComponent},
+  {path:'studentlist',component:StudentlistComponent}
 ];
 
 @NgModule({
