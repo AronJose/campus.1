@@ -21,6 +21,8 @@ import { FacultyHeaderComponent } from './faculty-header/faculty-header.componen
 import { FacultyEditComponent } from './faculty/faculty-edit/faculty-edit.component';
 import { StudentRegComponent } from './student-reg/student-reg.component';
 import { StudentlistComponent } from './studentlist/studentlist.component';
+import { StudenteditComponent } from './studentlist/studentedit/studentedit.component';
+import { DateFormatPipe } from './pipes/datePipe';
 
 
 
@@ -42,6 +44,7 @@ import { StudentlistComponent } from './studentlist/studentlist.component';
     FacultyEditComponent,
     StudentRegComponent,
     StudentlistComponent,
+    StudenteditComponent,
 
 
   ],
@@ -55,7 +58,7 @@ import { StudentlistComponent } from './studentlist/studentlist.component';
     ToastrModule.forRoot(),
 
   ],
-  providers: [],
+  providers: [DateFormatPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

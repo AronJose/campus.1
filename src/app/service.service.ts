@@ -118,4 +118,16 @@ export class ServiceService {
     let  head_obj=new HttpHeaders({"Authorization":"Campus " + tocken})
     return this.http.delete(environment.baseUrl + '/student/'+studentId,{headers:head_obj});
   }
+
+  getstudent(studentId:any):Observable<any>{
+    let tocken=localStorage.getItem('accesstoken')
+    let  head_obj=new HttpHeaders({"Authorization":"Campus " + tocken})
+    return this.http.get(environment.baseUrl + '/student/'+ studentId,{headers:head_obj});
+  }
+
+  updateStudent(item:any,studentId:any):Observable<any>{
+    let tocken=localStorage.getItem('accesstoken')
+    let  head_obj=new HttpHeaders({"Authorization":"Campus " + tocken})
+    return this.http.put(environment.baseUrl + '/student/'+studentId,item,{headers:head_obj});
+  }
 }

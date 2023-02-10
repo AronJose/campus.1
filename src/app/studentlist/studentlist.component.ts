@@ -23,7 +23,7 @@ export class StudentlistComponent implements OnInit {
     })
   }
   editStudent(item: any) {
-    this.roter.navigate(['studentedit/', item.schoolId])
+    this.roter.navigate(['studentedit/', item.studentId])
    }
   delete(item: any) {
     this.service.studentdelete(item.studentId).subscribe({
